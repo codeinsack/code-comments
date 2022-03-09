@@ -37,6 +37,12 @@ const App = () => {
     });
 
     setCode(result.outputFiles[0].text);
+
+    try {
+      eval(result.outputFiles[0].text);
+    } catch (error) {
+      alert(error);
+    }
   };
 
   return (
