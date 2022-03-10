@@ -8,7 +8,6 @@ const App = () => {
   const ref = useRef<any>();
   const iframe = useRef<any>();
   const [input, setInput] = useState("");
-  const [code, setCode] = useState("");
 
   const startService = async () => {
     ref.current = await esbuild.startService({
@@ -67,8 +66,12 @@ const App = () => {
       <textarea value={input} onChange={(e) => setInput(e.target.value)} />
       <div>
         <button onClick={onClick}>Submit</button>
-        <pre>{code}</pre>
-        <iframe ref={iframe} sandbox="allow-scripts" srcDoc={html} />
+        <iframe
+          ref={iframe}
+          sandbox="allow-scripts"
+          title="preview"
+          srcDoc={html}
+        />
       </div>
     </div>
   );
