@@ -48,7 +48,7 @@ const CodeEditor: FC<CodeEditorProps> = ({ initialValue, onChange }) => {
       <MonacoEditor
         value={initialValue}
         language="javascript"
-        height="500px"
+        height="100%"
         theme="dark"
         options={{
           wordWrap: "on",
