@@ -10,7 +10,7 @@ const CellList: FC = () => {
 
   const renderedCells = cells.map((cell) => (
     <Fragment key={cell.id}>
-      <AddCell nextCellId={cell.id} />
+      <AddCell previousCellId={cell.id} />
       <CellListItem cell={cell} />
     </Fragment>
   ));
@@ -18,7 +18,7 @@ const CellList: FC = () => {
   return (
     <div>
       {renderedCells}
-      <AddCell forceVisible={cells.length === 0} nextCellId={null} />
+      <AddCell forceVisible={cells.length === 0} previousCellId={null} />
     </div>
   );
 };
