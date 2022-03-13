@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Cell } from "../../state";
+import ActionBar from "../ActionBar/ActionBar";
 import CodeCell from "../CodeCell/CodeCell";
 import TextEditor from "../TextEditor/TextEditor";
 
@@ -16,7 +17,12 @@ const CellListItem: FC<CellListItemProps> = ({ cell }) => {
     child = <TextEditor cell={cell} />;
   }
 
-  return <div>{child}</div>;
+  return (
+    <div>
+      {child}
+      <ActionBar id={cell.id} />
+    </div>
+  );
 };
 
 export default CellListItem;
